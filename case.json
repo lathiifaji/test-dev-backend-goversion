@@ -1,0 +1,70 @@
+{
+    "data": [
+        {
+            "category": "Buah",
+            "code": "B001",
+            "name": "Apel",
+            "total": 10
+        },
+        {
+            "category": "Hewan",
+            "code": "H002",
+            "name": "Buaya",
+            "total": 10
+        },
+        {
+            "category": "Hewan",
+            "code": "H001",
+            "name": "Kucing",
+            "total": 30
+        },
+        {
+            "category": "Buah",
+            "code": "B002",
+            "name": "Pepaya",
+            "total": 20
+        },
+        {
+            "category": "Buah",
+            "code": "B001",
+            "name": "Anggur",
+            "total": 5
+        },
+        {
+            "category": "Buah",
+            "code": "B002",
+            "name": "Pisang",
+            "total": 8
+        },
+        {
+            "category": "Hewan",
+            "code": "H002",
+            "name": "Komodo",
+            "total": 15
+        },
+        {
+            "category": "Sayuran",
+            "code": "S003",
+            "name": "Wortel",
+            "total": 25
+        },
+        {
+            "category": "Hewan",
+            "code": "H001",
+            "name": "Harimau",
+            "total": 10
+        },
+        {
+            "category": "Sayuran",
+            "code": "S001",
+            "name": "Bayam",
+            "total": 12
+        },
+        {
+            "category": "Sayuran",
+            "code": "S002",
+            "name": "Kangkung",
+            "total": 18
+        }
+    ]
+}
