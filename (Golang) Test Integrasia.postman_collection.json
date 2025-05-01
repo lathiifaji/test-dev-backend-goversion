@@ -1,0 +1,580 @@
+{
+	"info": {
+		"_postman_id": "2e58e8a2-0e5d-4ee2-88b2-067050d32557",
+		"name": "(Golang) Test Integrasia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15048905",
+		"_collection_link": "https://gold-desert-556883.postman.co/workspace/My-Workspace~1ce71a14-1322-492b-8d84-1ff39a99a60c/collection/15048905-2e58e8a2-0e5d-4ee2-88b2-067050d32557?action=share&source=collection_link&creator=15048905"
+	},
+	"item": [
+		{
+			"name": "(No. 1) - Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 1) - Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:45:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "921"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"type\": \"Anjing\",\n        \"breed\": \"Golden Retriever\",\n        \"name\": \"Otto\",\n        \"character\": \"Energik dan senang bermain bola\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 2,\n        \"type\": \"Anjing\",\n        \"breed\": \"Siberian Husky\",\n        \"name\": \"Max\",\n        \"character\": \"Bulu lebat dan mata biru\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 3,\n        \"type\": \"Anjing\",\n        \"breed\": \"Beagle\",\n        \"name\": \"Bob\",\n        \"character\": \"Ceria dan aktif mengajak esa bermain di taman\",\n        \"favorite\": \"tidak\"\n    },\n    {\n        \"id\": 4,\n        \"type\": \"Kucing\",\n        \"breed\": \"Maine Coon\",\n        \"name\": \"Luna\",\n        \"character\": \"Anggun dan manja\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 5,\n        \"type\": \"Kucing\",\n        \"breed\": \"British Short Hair\",\n        \"name\": \"Milo\",\n        \"character\": \"Cerdas dan aktif\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 6,\n        \"type\": \"Ikan\",\n        \"breed\": \"Koi\",\n        \"name\": \"Nana\",\n        \"character\": \"Ikan Koi yang indah\",\n        \"favorite\": \"tidak\"\n    },\n    {\n        \"id\": 7,\n        \"type\": \"Ikan\",\n        \"breed\": \"Mas\",\n        \"name\": \"Goldie\",\n        \"character\": \"Ikan mas berwarna cerah\",\n        \"favorite\": \"tidak\"\n    },\n    {\n        \"id\": 8,\n        \"type\": \"Badak\",\n        \"breed\": \"Badak Jawa\",\n        \"name\": \"Rino\",\n        \"character\": \"Pekerja keras\",\n        \"favorite\": \"ya\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "(No. 2) - Create Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Badak\",\r\n    \"breed\" : \"Badak Jawa\",\r\n    \"name\" : \"Rino\",\r\n    \"character\" : \"Pekerja keras\",\r\n    \"favorite\": \"ya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 2) - Create Data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Badak\",\r\n    \"breed\" : \"Badak Jawa\",\r\n    \"name\" : \"Rino\",\r\n    \"character\" : \"Pekerja keras\",\r\n    \"favorite\": \"ya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:41:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 8,\n    \"type\": \"Badak\",\n    \"breed\": \"Badak Jawa\",\n    \"name\": \"Rino\",\n    \"character\": \"Pekerja keras\",\n    \"favorite\": \"ya\"\n}"
+				}
+			]
+		},
+		{
+			"name": "(No. 3) -  Get Favorite and sorter by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/pet/favorite?order=desc&field=name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"pet",
+						"favorite"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "desc",
+							"description": "order asc/desc"
+						},
+						{
+							"key": "field",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 3) -  Get Favorite and sorter by name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet/favorite?order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"favorite"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "order asc/desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:43:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "569"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"type\": \"Kucing\",\n        \"breed\": \"Persia\",\n        \"name\": \"Luna\",\n        \"character\": \"Anggun dan manja\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 2,\n        \"type\": \"Anjing\",\n        \"breed\": \"Siberian Husky\",\n        \"name\": \"Max\",\n        \"character\": \"Bulu lebat dan mata biru\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 5,\n        \"type\": \"Kucing\",\n        \"breed\": \"British Short Hair\",\n        \"name\": \"Milo\",\n        \"character\": \"Cerdas dan aktif\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 1,\n        \"type\": \"Anjing\",\n        \"breed\": \"Golden Retriever\",\n        \"name\": \"Otto\",\n        \"character\": \"Energik dan senang bermain bola\",\n        \"favorite\": \"ya\"\n    },\n    {\n        \"id\": 8,\n        \"type\": \"Badak\",\n        \"breed\": \"Badak Jawa\",\n        \"name\": \"Rino\",\n        \"character\": \"Pekerja keras\",\n        \"favorite\": \"ya\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "(No. 4) - Update Data",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Kucing\",\r\n    \"breed\": \"Maine Coon\",\r\n    \"name\": \"Luna\",\r\n    \"character\": \"Anggun dan manja\",\r\n    \"favorite\": \"ya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/pet/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pet",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 4) - Update Data",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Kucing\",\r\n    \"breed\": \"Maine Coon\",\r\n    \"name\": \"Luna\",\r\n    \"character\": \"Anggun dan manja\",\r\n    \"favorite\": \"ya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pet/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:43:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"type\": \"Kucing\",\n    \"breed\": \"Maine Coon\",\n    \"name\": \"Luna\",\n    \"character\": \"Anggun dan manja\",\n    \"favorite\": \"ya\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Golang (No. 5) Count by type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pet-by-type?typepet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet-by-type"
+					],
+					"query": [
+						{
+							"key": "typepet",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 5) - Count By Type",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet-by-type?typepet=anjing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet-by-type"
+							],
+							"query": [
+								{
+									"key": "typepet",
+									"value": "anjing"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:45:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "401"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"type\": \"Anjing\",\n            \"breed\": \"Golden Retriever\",\n            \"name\": \"Otto\",\n            \"character\": \"Energik dan senang bermain bola\",\n            \"favorite\": \"ya\"\n        },\n        {\n            \"id\": 2,\n            \"type\": \"Anjing\",\n            \"breed\": \"Siberian Husky\",\n            \"name\": \"Max\",\n            \"character\": \"Bulu lebat dan mata biru\",\n            \"favorite\": \"ya\"\n        },\n        {\n            \"id\": 3,\n            \"type\": \"Anjing\",\n            \"breed\": \"Beagle\",\n            \"name\": \"Bob\",\n            \"character\": \"Ceria dan aktif mengajak esa bermain di taman\",\n            \"favorite\": \"tidak\"\n        }\n    ],\n    \"total\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "(No. 6) - Get Palindrome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pet/palindrome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet",
+						"palindrome"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 6) - Get Palindrome",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet/palindrome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"palindrome"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:44:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Name\": \"Otto\",\n        \"Length\": 4\n    },\n    {\n        \"Name\": \"Bob\",\n        \"Length\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "(No. 7) - Sum Array",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pet/sum-array",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet",
+						"sum-array"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 7) - Sum Array",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet/sum-array",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"sum-array"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 07:40:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        18,\n        6,\n        2,\n        12,\n        14\n    ],\n    \"total\": 52\n}"
+				}
+			]
+		},
+		{
+			"name": "(No. 8) - Anagram",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pet/anagram",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pet",
+						"anagram"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "(No. 8) - Anagram",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet/anagram",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"anagram"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 08:05:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"isAnagram\": true,\n            \"str1\": \"kamu\",\n            \"str2\": \"muka\"\n        },\n        {\n            \"isAnagram\": true,\n            \"str1\": \"buta\",\n            \"str2\": \"buat\"\n        },\n        {\n            \"isAnagram\": false,\n            \"str1\": \"dia\",\n            \"str2\": \"aku\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "(No. 9) - Reformat Json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/pet/reformat-json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"pet",
+						"reformat-json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
