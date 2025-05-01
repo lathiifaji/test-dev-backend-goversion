@@ -4,7 +4,7 @@
 		"name": "(Golang) Test Integrasia",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15048905",
-		"_collection_link": "https://gold-desert-556883.postman.co/workspace/My-Workspace~1ce71a14-1322-492b-8d84-1ff39a99a60c/collection/15048905-2e58e8a2-0e5d-4ee2-88b2-067050d32557?action=share&source=collection_link&creator=15048905"
+		"_collection_link": "https://gold-desert-556883.postman.co/workspace/Test-Integrasia~f6b2efa5-04bc-491f-9838-d895e1867790/collection/15048905-2e58e8a2-0e5d-4ee2-88b2-067050d32557?action=share&source=collection_link&creator=15048905"
 	},
 	"item": [
 		{
@@ -561,12 +561,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/pet/reformat-json",
+					"raw": "http://localhost:8080/api/pet/reformat-json",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3001",
+					"port": "8080",
 					"path": [
 						"api",
 						"pet",
@@ -574,7 +574,47 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "(No. 9) - Reformat Json",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pet/reformat-json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pet",
+								"reformat-json"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 10:20:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "678"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": {\n        \"data\": [\n            {\n                \"category\": \"Buah\",\n                \"data\": {\n                    \"B001\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Apel\",\n                                \"total\": 10\n                            },\n                            {\n                                \"name\": \"Anggur\",\n                                \"total\": 5\n                            }\n                        ],\n                        \"total\": 15\n                    },\n                    \"B002\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Pepaya\",\n                                \"total\": 20\n                            },\n                            {\n                                \"name\": \"Pisang\",\n                                \"total\": 8\n                            }\n                        ],\n                        \"total\": 28\n                    }\n                },\n                \"total\": 43\n            },\n            {\n                \"category\": \"Hewan\",\n                \"data\": {\n                    \"H001\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Kucing\",\n                                \"total\": 30\n                            },\n                            {\n                                \"name\": \"Harimau\",\n                                \"total\": 10\n                            }\n                        ],\n                        \"total\": 40\n                    },\n                    \"H002\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Buaya\",\n                                \"total\": 10\n                            },\n                            {\n                                \"name\": \"Komodo\",\n                                \"total\": 15\n                            }\n                        ],\n                        \"total\": 25\n                    }\n                },\n                \"total\": 65\n            },\n            {\n                \"category\": \"Sayuran\",\n                \"data\": {\n                    \"S001\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Bayam\",\n                                \"total\": 12\n                            }\n                        ],\n                        \"total\": 12\n                    },\n                    \"S002\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Kangkung\",\n                                \"total\": 18\n                            }\n                        ],\n                        \"total\": 18\n                    },\n                    \"S003\": {\n                        \"data\": [\n                            {\n                                \"name\": \"Wortel\",\n                                \"total\": 25\n                            }\n                        ],\n                        \"total\": 25\n                    }\n                },\n                \"total\": 55\n            }\n        ],\n        \"total\": 163\n    }\n}"
+				}
+			]
 		}
 	]
 }

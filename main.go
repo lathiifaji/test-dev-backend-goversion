@@ -1,12 +1,14 @@
 package main
 
 import (
-	"encoding/json"
 	"net/http"
 	"sort"
 	"strconv"
 	"github.com/gorilla/mux"
 	"strings"
+	"io/ioutil"
+	"log"
+	"encoding/json"
 )
 
 type Pet struct {
@@ -274,6 +276,125 @@ func isAnagramHandler(w http.ResponseWriter, r *http.Request) {
     	})
 }
 
+func openFile(w http.ResponseWriter, r *http.Request){
+        filename := "case.json"
+// Baca isi file JSON
+    content, err := ioutil.ReadFile(filename)
+    if err != nil {
+        log.Fatalf("Gagal membaca file: %v", err)
+    }
+
+    // Decode JSON input
+    var input Input
+    if err := json.Unmarshal(content, &input); err != nil {
+        log.Fatalf("Gagal decode JSON: %v", err)
+    }
+
+    result := make(map[string]map[string][]ItemBrief)
+    categoryTotals := make(map[string]int)
+    codeTotals := make(map[string]map[string]int)
+    totalAll := 0
+
+    // Proses data
+    for _, item := range input.Data {
+        totalAll += item.Total
+
+        // Inisialisasi map jika belum ada
+        if result[item.Category] == nil {
+            result[item.Category] = make(map[string][]ItemBrief)
+            codeTotals[item.Category] = make(map[string]int)
+        }
+
+        // Simpan data ringkas
+        result[item.Category][item.Code] = append(result[item.Category][item.Code], ItemBrief{
+            Name:  item.Name,
+            Total: item.Total,
+        })
+
+        // Hitung total per code dan per category
+        codeTotals[item.Category][item.Code] += item.Total
+        categoryTotals[item.Category] += item.Total
+    }
+
+    // Susun hasil akhir
+    var final FinalOutput
+    final.Total = totalAll
+
+    // Untuk konsistensi urutan, bisa pakai sort
+    var categories []string
+    for cat := range result {
+        categories = append(categories, cat)
+    }
+    sort.Strings(categories)
+
+    for _, cat := range categories {
+        catOut := CategoryOut{
+            Category: cat,
+            Total:    categoryTotals[cat],
+            Data:     make(map[string]CodeGroupedOutput),
+        }
+
+        for code, items := range result[cat] {
+            catOut.Data[code] = CodeGroupedOutput{
+                Total: codeTotals[cat][code],
+                Data:  items,
+            }
+        }
+
+        final.Data = append(final.Data, catOut)
+    }
+
+    // Encode ke JSON hasil akhir
+    outputJSON, err := json.MarshalIndent(final, "", "  ")
+    if err != nil {
+        log.Fatalf("Gagal encode hasil akhir: %v", err)
+    }
+
+
+//         ubah bentuk json
+        var parsed interface{}
+        json.Unmarshal(outputJSON, &parsed)
+
+
+        // Set header dan encode ke JSON
+    	w.Header().Set("Content-Type", "application/json")
+    	json.NewEncoder(w).Encode(map[string]interface{}{
+    		"results": parsed,
+    	})
+}
+
+type Item struct {
+    Category string `json:"category"`
+    Code     string `json:"code"`
+    Name     string `json:"name"`
+    Total    int    `json:"total"`
+}
+
+type Input struct {
+    Data []Item `json:"data"`
+}
+
+type FinalOutput struct {
+    Total int           `json:"total"`
+    Data  []CategoryOut `json:"data"`
+}
+
+type CategoryOut struct {
+    Category string                       `json:"category"`
+    Total    int                          `json:"total"`
+    Data     map[string]CodeGroupedOutput `json:"data"`
+}
+
+type CodeGroupedOutput struct {
+    Total int         `json:"total"`
+    Data  []ItemBrief `json:"data"`
+}
+
+type ItemBrief struct {
+    Name  string `json:"name"`
+    Total int    `json:"total"`
+}
+
 func main() {
     r := mux.NewRouter()
     r.HandleFunc("/api/pet/{id}", updatePet).Methods("PATCH")
@@ -283,5 +404,6 @@ func main() {
     r.HandleFunc("/api/pet/sum-array", sumArray).Methods("GET")
     r.HandleFunc("/api/pet/palindrome", palindromeHandler).Methods("GET")
     r.HandleFunc("/api/pet/anagram", isAnagramHandler).Methods("GET")
+    r.HandleFunc("/api/pet/reformat-json", openFile).Methods("GET")
 	http.ListenAndServe(":8080", r)
 }
